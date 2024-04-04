@@ -3,44 +3,96 @@
 @tailwind utilities;
 
 .custom-container {
-  width: 92%;
-  max-width: 1400px;
+    width: 92%;
+    max-width: 1280px;
 }
 
 .custom-padding {
-  padding-left: 48px;
-  padding-right: 48px;
+    padding-left: 48px;
+    padding-right: 48px;
 }
 
-input, textarea {
-  border: 1px solid #0077FF;
-  padding: 8px 12px;
-  border-radius: 24px;
-  font-size: medium;
-  margin-left: -12px;
-  background-color: #F8FAFD;
+input,
+textarea {
+    border: 1px solid #0077ff;
+    padding: 8px 12px;
+    border-radius: 24px;
+    font-size: medium;
+    margin-left: -12px;
+    background-color: #f8fafd;
 }
 
-input:focus, textarea:focus {
-  outline: 1px solid #0077FF;
+input:focus,
+textarea:focus {
+    outline: 1px solid #0077ff;
 }
 
 .input-container {
-  margin-left: 12px;
+    margin-left: 12px;
 }
 
 label {
-  font-size: smaller;
-  color: #0077FF;
+    font-size: smaller;
+    color: #0077ff;
 }
 
 @media screen and (min-width: 768px) {
-  .custom-padding {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+    .custom-padding {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 
-  .custom-container {
-    width: 96%;
-  }
+    .custom-container {
+        width: 96%;
+    }
+}
+
+/* 
+    horizontal scroller styles
+    horizontal scroller styles
+    horizontal scroller styles
+*/
+/* .scroller {
+    max-width: 600px;
+} */
+
+.scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
 }

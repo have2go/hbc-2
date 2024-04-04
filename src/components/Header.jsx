@@ -30,7 +30,7 @@ export default function Header({ setIsPopup, setPopupType }) {
                         <Link className="" href="/services">
                             Услуги
                         </Link>
-                        <Link className="" href="/">
+                        <Link className="" href="/about">
                             О компании
                         </Link>
                         <Link className="" href="/">
