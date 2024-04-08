@@ -64,7 +64,7 @@ export default function Advantages() {
                     </p>
                 </div>
             </div> */}
-            <div className="scroller md:text-lg lg:text-xl xl:text-2xl" data-speed="slow" ref={scrollerRef}>
+            <div className="scroller relative -z-50 md:text-lg lg:text-xl xl:text-2xl" data-speed="slow" ref={scrollerRef}>
                 <ul className="tag-list scroller__inner" ref={scrollerInnerRef}>
                     <p className="flex bg-main-blue rounded-3xl py-8 md:px-10 lg:px-20 text-center justify-center items-center text-white">
                         Опыт в индустрии

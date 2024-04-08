@@ -12,6 +12,7 @@ import thirdCatServices from "@/constants/thirdCatServices";
 import SmallCard from "@/components/templates/SmallCard";
 import Header from "@/components/Header";
 import Popup from "@/components/popups/Popup";
+import Footer from "@/components/Footer";
 
 export default function Services() {
     const [isPopup, setIsPopup] = useState(false);
@@ -90,6 +91,7 @@ export default function Services() {
                     setPopupType={setPopupType}
                 ></Popup>
             )}
+            <Footer />
         </>
     );
 }

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Section from "@/components/templates/Section";
 import Popup from "@/components/popups/Popup";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 
 import aboutImage from "/public/about.jpg";
@@ -44,6 +45,7 @@ export default function About() {
                     setPopupType={setPopupType}
                 ></Popup>
             )}
+            <Footer />
         </>
     );
 }

@@ -8,6 +8,7 @@ import Main from "@/components/sections/Main";
 import Popular from "@/components/sections/Popular";
 import Popup from "@/components/popups/Popup";
 import Question from "@/components/sections/Question";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     const [isPopup, setIsPopup] = useState(false);
@@ -37,6 +38,7 @@ export default function Home() {
                 )}
                 <Question />
             </main>
+            <Footer />
         </>
     );
 }
