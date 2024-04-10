@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useMask } from "@react-input/mask";
 
 export default function FormPopular({ card }) {
+    const form = useRef();
+    const inputRef = useMask({ mask: "+7 (___) ___-__-__", replacement: { _: /\d/ }, showMask: true });
+
     const PUBLIC_KEY = "o3u4fext32rohw6Zf";
-    const TEMPLATE_ID = "template_sajxblj";
+    const TEMPLATE_ID = "template_53dooog";
     const SERVICE_ID = "service_l6aslnc";
 
     const [name, setName] = useState("");
@@ -12,33 +16,27 @@ export default function FormPopular({ card }) {
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
 
-    const templateParams = {
-        from_name: name,
-        form_emai: email,
-        from_phone: phone,
-        from_service: service,
-        from_section: "Популярные услуги",
-    };
-
     const sendEmail = e => {
         e.preventDefault();
 
         emailjs
-            .sendForm(SERVICE_ID, TEMPLATE_ID, templateParams, {
+            .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
                 publicKey: PUBLIC_KEY,
             })
+            .then(res => console.log(res))
             .then(
                 () => {
                     console.log("SUCCESS!");
                 },
                 error => {
-                    console.log("FAILED...", error.text);
+                    console.log("FAILED...", error);
                 }
             );
     };
 
     return (
-        <form className="flex flex-col items-center" onSubmit={sendEmail}>
+        <form className="flex flex-col items-center" onSubmit={sendEmail} ref={form}>
+            <input type="text" className="hidden" value="Популярные услуги" name="from_section" readOnly />
             <h4 className="text-3xl">Заказать услугу</h4>
             <p className="text-sm py-2">С Вами свяжется наш менеджер</p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 py-4 input-container">
@@ -51,6 +49,7 @@ export default function FormPopular({ card }) {
                         value={name}
                         onChange={e => setName(e.target.value)}
                         required
+                        name="from_name"
                     />
                 </label>
                 <label htmlFor="" className="flex flex-col">
@@ -62,6 +61,7 @@ export default function FormPopular({ card }) {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         required
+                        name="from_email"
                     />
                 </label>
                 <label htmlFor="" className="flex flex-col">
@@ -72,6 +72,7 @@ export default function FormPopular({ card }) {
                         className="text-black"
                         value={service}
                         onChange={e => setService(e.target.value)}
+                        name="from_service"
                     />
                 </label>
                 <label htmlFor="" className="flex flex-col">
@@ -82,12 +83,14 @@ export default function FormPopular({ card }) {
                         className="text-black"
                         value={phone}
                         onChange={e => setPhone(e.target.value)}
+                        name="from_phone"
+                        ref={inputRef}
                     />
                 </label>
                 <label htmlFor="" className="col-start-1 col-end-3 flex flex-col">
                     Дополнительная информация
                     <textarea
-                        name=""
+                        name="message"
                         className="max-h-24 resize-none text-black"
                         id=""
                         cols="30"
