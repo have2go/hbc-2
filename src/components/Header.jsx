@@ -18,7 +18,7 @@ export default function Header({ setIsPopup, setPopupType }) {
     return (
         <>
             <header
-                className={`w-full h-20 shadow-md rounded-b-3xl fixed top-0 left-0 ${
+                className={`w-full h-20 shadow-md rounded-b-3xl fixed top-0 left-0 z-20 ${
                     isWhite ? "bg-white" : "bg-main-blue"
                 }`}
             >
@@ -33,7 +33,7 @@ export default function Header({ setIsPopup, setPopupType }) {
                         <Link className="" href="/about">
                             О компании
                         </Link>
-                        <Link className="" href="/">
+                        <Link className="" href="/contacts">
                             Контакты
                         </Link>
                         <button

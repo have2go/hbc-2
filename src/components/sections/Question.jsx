@@ -38,6 +38,7 @@ export default function Question() {
             className="flex flex-col items-center py-12 md:w-3/4 lg:w-2/4 mx-auto"
             onSubmit={sendEmail}
             ref={form}
+            id="question"
         >
             <h4 className="xl:text-4xl md:text-3xl lg:text-4xl">Остались вопросы?</h4>
             <p className="lg:text-sm lg:pt-3 md:text-xs md:pt-2">Заполните форму и наш менеджер свяжется с Вами</p>

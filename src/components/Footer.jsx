@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 export default function Footer() {
     return (
         <>
-            <footer className={`w-full h-20 md:mt-10 xl:mt-20  shadow-md rounded-t-3xl bg-main-blue`}>
+            <footer className={`w-full h-20 md:mt-20 xl:mt-20  shadow-md rounded-t-3xl bg-main-blue`}>
                 <div className="flex custom-container h-full mx-auto items-center justify-between">
                     <Image src={logoWhite} alt="Highbrow Customs" className="md:w-52" />
                     <div className="flex flex-col lg:text-lg xl:text-xl items-center text-white">

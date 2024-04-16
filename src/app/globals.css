@@ -96,3 +96,29 @@ label {
         transform: translate(calc(-50% - 0.5rem));
     }
 }
+
+/* 
+    horizontal scroller styles
+    horizontal scroller styles
+    horizontal scroller styles
+*/
+
+/* 
+    map
+*/
+
+.country {
+    fill: #3593ff;
+    stroke: white;
+    stroke-width: 3px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.country:hover {
+    fill: #0077ff;
+}
+
+/* 
+    map
+*/

@@ -85,11 +85,11 @@ export default function Advantages() {
             </div>
             <p className="md:text-lg md:py-6 lg:text-xl xl:text-2xl py-8 custom-padding custom-container mx-auto">
                 Получить консультацию или заказать услугу Вы можете заполнив{" "}
-                <Link href="#" className="text-main-blue underline">
+                <Link href="/#question" className="text-main-blue underline">
                     форму
                 </Link>{" "}
                 или связавшись с нами через раздел{" "}
-                <Link href="#" className="text-main-blue underline">
+                <Link href="/contacts" className="text-main-blue underline">
                     контакты
                 </Link>
                 .

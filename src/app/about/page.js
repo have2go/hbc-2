@@ -43,6 +43,7 @@ export default function About() {
                     setIsPopup={setIsPopup}
                     popupType={popupType}
                     setPopupType={setPopupType}
+                    isPopup={isPopup}
                 ></Popup>
             )}
             <Footer />

@@ -1,11 +1,9 @@
-import "./globals.css";
-
 export const metadata = {
-    title: "Highbrow Customs",
+    title: "О компании",
     description: "Ваш верный таможенный представитель",
 };
 
-export default function RootLayout({ children }) {
+export default function AboutLayout({ children }) {
     return (
         <html lang="ru">
             <body className="">{children}</body>

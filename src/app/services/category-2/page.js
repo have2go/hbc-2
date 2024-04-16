@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 
-import otherServices from "@/constants/otherSevices";
+import secondCatServices from "@/constants/secondCatServices";
 import SmallCard from "@/components/templates/SmallCard";
 import Popup from "@/components/popups/Popup";
 
 export default function Services() {
     const [isPopup, setIsPopup] = useState(false);
-    const [popupType, setPopupType] = useState("small");
+    const [popupType, setPopupType] = useState("");
     const [popupCard, setPopupCard] = useState();
 
     const onCardClick = (e, card, type) => {
@@ -19,8 +19,8 @@ export default function Services() {
 
     return (
         <>
-            {otherServices.map((card, i) => {
-                return <SmallCard card={card} onCardClick={onCardClick} key={i} />;
+            {secondCatServices.map((card, i) => {
+                return <SmallCard card={card} key={i} onCardClick={onCardClick} />;
             })}
             {isPopup && (
                 <Popup

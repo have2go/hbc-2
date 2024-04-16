@@ -9,6 +9,7 @@ import Popular from "@/components/sections/Popular";
 import Popup from "@/components/popups/Popup";
 import Question from "@/components/sections/Question";
 import Footer from "@/components/Footer";
+import Geography from "@/components/sections/Geography";
 
 export default function Home() {
     const [isPopup, setIsPopup] = useState(false);
@@ -28,17 +29,20 @@ export default function Home() {
                 <Main />
                 <Popular isPopup={isPopup} setIsPopup={setIsPopup} popupCard={popupCard} onCardClick={onCardClick} />
                 <Advantages />
+                <Geography />
                 {isPopup && (
                     <Popup
                         card={popupCard}
                         setIsPopup={setIsPopup}
                         popupType={popupType}
                         setPopupType={setPopupType}
+                        isPopup={isPopup}
                     ></Popup>
                 )}
                 <Question />
             </main>
             <Footer />
+            
         </>
     );
 }
